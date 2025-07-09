@@ -1,13 +1,10 @@
-using System.Collections;
 using UnityEngine;
 
 namespace GunScripts
 {
     public class EnemyGun : MonoBehaviour
     {
-        public float damage = 10f;
         public float range = 100f;
-        public float fireRate = 15f;
 
         public Transform enemyCamera;
         public ParticleSystem muzzleFlash;

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: fd2560fd9a2bb4c46877e68bcac8e7e3
+labels:
+- warfx
+- particles
+- fire
+- desktop
+AssetOrigin:
+  serializedVersion: 1
+  productId: 5669
+  packageName: War FX
+  packageVersion: 1.8.04
+  assetPath: Assets/JMO Assets/WarFX/_Effects/Fire/No Smoke/WFX_Fire Natural Circle
+    (No Smoke).prefab
+  uploadId: 301034

@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using Unity.Mathematics;
 using UnityEngine;
 
 namespace MapScripts
@@ -51,16 +49,6 @@ namespace MapScripts
                     grid[x, y] = new Node(walkable, worldPoint, x, y);
                 }
             }
-        }
-        
-        public bool IsInBounds(int x, int y)
-        {
-            return x >= 0 && x < gridSizeX && y >= 0 && y < gridSizeY;
-        }
-
-        public Node GetNodeAt(int x, int y)
-        {
-            return grid[x, y];
         }
         
         public Node TryGetNode(int x, int y)

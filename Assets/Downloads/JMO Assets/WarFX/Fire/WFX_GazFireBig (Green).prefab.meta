@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 93d2153958f394f418c80a5b6e824fa0
+labels:
+- warfx
+- particles
+- fire
+- desktop
+AssetOrigin:
+  serializedVersion: 1
+  productId: 5669
+  packageName: War FX
+  packageVersion: 1.8.04
+  assetPath: Assets/JMO Assets/WarFX/_Effects/Fire/WFX_GazFireBig (Green).prefab
+  uploadId: 301034

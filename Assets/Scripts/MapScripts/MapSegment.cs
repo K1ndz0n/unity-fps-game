@@ -25,7 +25,6 @@ namespace MapScripts
         public List<ConnectionPoint> connectionPoints;
         public List<Node> connectionNodes;
         
-        public bool isStartSegment;
         public bool isPathSegment = false;
         public bool isWall = false;
     }

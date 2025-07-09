@@ -7,10 +7,6 @@ public class MouseLook : MonoBehaviour
 
     private float mouseXTotal = 0f;
     private float mouseYTotal = 0f;
-
-    private float recoilX = 0f;
-    private float recoilY = 0f;
-
     private float currentRecoilX = 0f;
     private float currentRecoilY = 0f;
 

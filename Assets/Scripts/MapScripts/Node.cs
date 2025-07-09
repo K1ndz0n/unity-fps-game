@@ -36,26 +36,6 @@ namespace MapScripts
             this.gridY = y;
         }
         
-        public Node(Node original)
-        {
-            this.walkable = original.walkable;
-            this.worldPosition = original.worldPosition;
-            this.gridX = original.gridX;
-            this.gridY = original.gridY;
-            this.isEmpty = original.isEmpty;
-            this.isConnectionNode = original.isConnectionNode;
-
-            // Głębokie kopiowanie - relacje nie powinny przechodzić
-            this.parent = null;
-            this.ownerSegment = null;
-
-            this.isConnected = original.isConnected;
-
-            this.gCost = original.gCost;
-            this.hCost = original.hCost;
-            this.heapIndex = original.heapIndex;
-        }
-        
         public int HeapIndex {
             get {
                 return heapIndex;

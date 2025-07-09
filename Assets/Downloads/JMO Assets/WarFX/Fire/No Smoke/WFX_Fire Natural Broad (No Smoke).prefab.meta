@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 725e771a5f190c84d830271d9f037471
+labels:
+- warfx
+- particles
+- fire
+- desktop
+AssetOrigin:
+  serializedVersion: 1
+  productId: 5669
+  packageName: War FX
+  packageVersion: 1.8.04
+  assetPath: Assets/JMO Assets/WarFX/_Effects/Fire/No Smoke/WFX_Fire Natural Broad
+    (No Smoke).prefab
+  uploadId: 301034

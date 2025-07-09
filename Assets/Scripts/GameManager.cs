@@ -1,8 +1,6 @@
-using System;
 using EnemyScripts;
 using GunScripts;
 using MapScripts;
-using TMPro;
 using UiScripts;
 using UnityEngine;
 using Grid = MapScripts.Grid;
@@ -17,7 +15,6 @@ public class GameManager : MonoBehaviour
     public CharacterController playerController;
     public GameObject enemyPrefab;
     public GameObject playerPrefab;
-    public LayerMask spawnObstructionMask;
     public Grid grid;
     public MapCreator mapCreator;
     public GameObject keyPrefab;
@@ -27,7 +24,6 @@ public class GameManager : MonoBehaviour
 
     private GameObject playerInstance;
     
-    public float obstructionCheckRadius = 1f;
     public float spawnRange = 50f;
 
     public int enemyCounter = 0;

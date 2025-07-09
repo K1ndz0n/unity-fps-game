@@ -11,33 +11,41 @@ public class PlayerMovement : MonoBehaviour
     public float gravity = -35f;
     public float jumpHeight = 3f;
 
-    Vector3 velocity;
-    bool isGrounded;
+    private Vector3 velocity;
+    private bool isGrounded;
 
-    Vector3 horizontalVelocity = Vector3.zero;
+    private Vector3 horizontalVelocity = Vector3.zero;
     
-    Vector3 Accelerate(Vector3 currentVelocity, Vector3 wishDir, float maxSpeed, float accel)
+    private Vector3 Accelerate(Vector3 currentVelocity, Vector3 wishDir, float maxSpeed, float accel)
     {
         float currentSpeed = Vector3.Dot(currentVelocity, wishDir);
         float addSpeed = maxSpeed - currentSpeed;
 
         if (addSpeed <= 0)
+        {
             return currentVelocity;
-
+        }
+        
         float accelSpeed = accel * Time.deltaTime;
+        
         if (accelSpeed > addSpeed)
+        {
             accelSpeed = addSpeed;
-
+        }
+        
         return currentVelocity + wishDir * accelSpeed;
     }
 
 
-    void Update()
+    private void Update()
     {
         isGrounded = characterController.isGrounded;
 
         if (isGrounded && velocity.y < 0)
+        {
             velocity.y = -2f;
+        }
+            
 
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");

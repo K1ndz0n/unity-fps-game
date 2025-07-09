@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e95e63ec9d0847741871273ca3e38c8f
+labels:
+- warfx
+- particles
+- fire
+- weapon
+- desktop
+AssetOrigin:
+  serializedVersion: 1
+  productId: 5669
+  packageName: War FX
+  packageVersion: 1.8.04
+  assetPath: Assets/JMO Assets/WarFX/_Effects/Fire/WFX_FlameThrower Looped.prefab
+  uploadId: 301034

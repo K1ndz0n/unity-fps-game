@@ -1,9 +1,6 @@
-using System;
 using System.Collections;
 using EnemyScripts;
-using TMPro;
 using UiScripts;
-using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 

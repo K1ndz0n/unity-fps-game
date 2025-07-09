@@ -18,12 +18,8 @@ namespace EnemyScripts
         public Transform enemyCamera;
         public Grid grid;
         
-        public float followRange = 20f;
-        public float maxJumpHeight = 3f; // musi pasować do mocy skoku
-        public float checkDistance = 2f;
         public float patrolDistance = 20f;
         public float viewAngle = 60f; // szerokość kąta widzenia (w stopniach)
-        public float viewDistance = 20f; // maksymalna odległość widzenia
         public float closeCombatRange = 10f;
         public float pathPointReachThreshold = 0.6f;
         public int hideSpotSearchRange = 15;
@@ -57,7 +53,6 @@ namespace EnemyScripts
         private int shotCount = 0;
 
         private float shotTimer = 0f;
-        private float stuckTimer = 0f;
         private float maxStuckTime = 3f;
         private float playerSpotTime = 0f;
         
@@ -300,51 +295,6 @@ namespace EnemyScripts
             grid.fullPath = new List<Node>(grid.path);
 
             return grid.ConvertNodesToWorldPositions(path);
-
-            /* List<Vector3> waypoints = new List<Vector3>();
-             Vector2 oldDir = Vector2.zero;
-
-             // zawsze dodaj pierwszy punkt
-             waypoints.Add(path[0].worldPosition);
-
-             for (int i = 1; i < path.Count; i++)
-             {
-                 Vector2 newDir = new Vector2(
-                     path[i].gridX - path[i - 1].gridX,
-                     path[i].gridY - path[i - 1].gridY
-                 );
-
-                 if (newDir != oldDir)
-                 {
-                     // zanim dodasz punkt, sprawdź czy jest widoczność
-                     Vector3 from = path[i - 2 >= 0 ? i - 2 : 0].worldPosition;
-                     Vector3 to = path[i].worldPosition;
-
-                     if (IsLineBlocked(from, to))
-                     {
-                         waypoints.Add(path[i - 1].worldPosition);
-                     }
-                 }
-
-                 oldDir = newDir;
-             }
-
-             // upewnij się, że dodajesz ostatni punkt
-             waypoints.Add(path[^1].worldPosition);
-
-             return waypoints;*/
-        }
-        
-        private bool IsLineBlocked(Vector3 from, Vector3 to)
-        {
-            Vector3 dir = to - from;
-            float dist = dir.magnitude;
-
-            // podnieś raycast nad ziemię
-            from.y += 1f;
-            to.y += 1f;
-
-            return Physics.Raycast(from, dir.normalized, dist, obstacleMask);
         }
 
         private void MoveAlongPath()
@@ -380,7 +330,6 @@ namespace EnemyScripts
             }
             else
             {
-                stuckTimer += Time.deltaTime;
                 movement.SetInputDirection(direction.normalized);
             }
         }

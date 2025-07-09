@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using NUnit.Framework;
 using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -87,10 +85,6 @@ namespace MapScripts
                         if (path != null)
                         {
                             CreatePath(path);
-                        }
-                        else
-                        {
-                          //  Debug.Log("nie znaleziono ścieżki");
                         }
                     }
 

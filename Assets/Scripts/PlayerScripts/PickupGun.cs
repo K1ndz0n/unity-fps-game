@@ -124,18 +124,5 @@ namespace PlayerScripts
             gun.transform.localRotation = Quaternion.identity;
             gun.StartCoroutine(gun.PickupAnimation());
         }
-
-        public void DropWeapon()
-        {
-            Gun gun = weaponHolder.GetChild(0).GetComponent<Gun>();
-            gun.isActive = false;
-            gun.weaponRigidbody.isKinematic = false;
-            gun.weaponRigidbody.linearVelocity = GameManager.Instance.playerController.velocity;
-            gun.weaponRigidbody.AddForce(fpsCam.transform.forward * dropForwardForce, ForceMode.Impulse);
-            gun.weaponRigidbody.AddForce(fpsCam.transform.up * dropUpwardForce, ForceMode.Impulse);
-            float random = Random.Range(-1f, 1f);
-            gun.weaponRigidbody.AddTorque(new Vector3(random, random, random) * 10);
-            gun.transform.SetParent(null);
-        }
     }
 }

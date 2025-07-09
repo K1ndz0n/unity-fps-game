@@ -33,11 +33,16 @@ namespace EnemyScripts
             float addSpeed = maxSpeed - currentSpeed;
 
             if (addSpeed <= 0)
+            {
                 return currentVelocity;
-
+            }
+            
             float accelSpeed = accel * Time.deltaTime;
+
             if (accelSpeed > addSpeed)
+            {
                 accelSpeed = addSpeed;
+            }
 
             return currentVelocity + wishDir * accelSpeed;
         }
@@ -81,21 +86,32 @@ namespace EnemyScripts
             isGrounded = characterController.isGrounded;
 
             if (isGrounded && velocity.y < 0)
+            {
                 velocity.y = -2f;
+            }
 
             if (isGrounded)
             {
                 if (inputDirection != Vector3.zero)
+                {
                     horizontalVelocity = Accelerate(horizontalVelocity, inputDirection, groundSpeed, groundAcceleration);
+                }
                 else
+                {
                     horizontalVelocity = Vector3.zero;
+                }
             }
             else
             {
                 if (inputDirection != Vector3.zero)
+                {
                     horizontalVelocity = Accelerate(horizontalVelocity, inputDirection, maxAirSpeed, airAcceleration);
+
+                }
                 else
+                {
                     horizontalVelocity = Vector3.Lerp(horizontalVelocity, Vector3.zero, Time.deltaTime * 1.5f);
+                }
             }
 
             velocity.y += gravity * Time.deltaTime;
